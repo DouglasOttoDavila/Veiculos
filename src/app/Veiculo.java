@@ -7,14 +7,14 @@ public abstract class Veiculo {
     protected int capacidade;
     protected Fabricante fabricante;
 
-    public Veiculo (String nome, int anoFabricacao, int capacidade){
+    public Veiculo(String nome, int anoFabricacao, int capacidade) {
         this.nome = nome;
         this.anoFabricacao = anoFabricacao;
         this.capacidade = capacidade;
         this.fabricante = new Fabricante();
     }
 
-    public Veiculo(String nome, int anoFabricacao, int capacidade, Fabricante fabricante) {    
+    public Veiculo(String nome, int anoFabricacao, int capacidade, Fabricante fabricante) {
         this.nome = nome;
         this.anoFabricacao = anoFabricacao;
         this.capacidade = capacidade;
@@ -54,10 +54,8 @@ public abstract class Veiculo {
 
     public abstract String acelerar();
 
-    public void mostrarDetalhes(){
-        
+    public void mostrarDetalhes() {
+
     }
-    
-    
-    
+
 }

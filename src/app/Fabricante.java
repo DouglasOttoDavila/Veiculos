@@ -1,10 +1,10 @@
 package app;
 
 public class Fabricante {
-    
+
     private String nome;
     private String paisDeOrigem;
-  
+
     public Fabricante() {
     }
 
@@ -28,6 +28,5 @@ public class Fabricante {
     public String toString() {
         return nome + "(" + paisDeOrigem + ")";
     }
-
 
 }

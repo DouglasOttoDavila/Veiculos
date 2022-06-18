@@ -4,13 +4,10 @@ public class Automovel extends Veiculo {
 
     private int diametroRoda;
     private boolean portaMalas;
+    private boolean acelerado;
 
-    /* public Automovel(String nome, int anoFabricacao, int capacidade, int diametroRoda, Fabricante fabricante) {
-        super(nome, anoFabricacao, capacidade, fabricante);
-        this.diametroRoda = diametroRoda;
-    } */
-
-    public Automovel(String nome, int anoFabricacao, int capacidade, int diametroRoda, String nomeFabricante, String paisDeOrigemFabricante) {
+    public Automovel(String nome, int anoFabricacao, int capacidade, int diametroRoda, String nomeFabricante,
+            String paisDeOrigemFabricante) {
         super(nome, anoFabricacao, capacidade);
         this.diametroRoda = diametroRoda;
         fabricante.setNome(nomeFabricante);
@@ -26,24 +23,32 @@ public class Automovel extends Veiculo {
     }
 
     @Override
-    public String acelerar(){
-        return "O automóvel acelerou.";
+    public String acelerar() {
+        if (acelerado == true) {
+            return "O automóvel já encontra-se com aceleração máxima.";
+        } else {
+            acelerado = true;
+            return "O automóvel acelerou.";
+        }
     }
 
     @Override
-    public void mostrarDetalhes(){
+    public void mostrarDetalhes() {
         System.out.println("| Ficha Técnica do Automóvel: ");
-        System.out.println("| O automóvel " + super.getNome() + ", ano " + super.getAnoFabricacao() + ", produzido pela " + fabricante.getNome() + " (" + fabricante.getPaisDeOrigem() + ") utiliza rodas de " + diametroRoda + " polegadas e possui capacidade para " + super.capacidade + " pessoas.");
+        System.out
+                .println("| O automóvel " + super.getNome() + ", ano " + super.getAnoFabricacao() + ", produzido pela "
+                        + fabricante.getNome() + " (" + fabricante.getPaisDeOrigem() + ") utiliza rodas aro "
+                        + diametroRoda + " e possui capacidade para " + super.capacidade + " ocupantes.");
     }
 
-    public String abrirPortaMalas(){
+    public String abrirPortaMalas() {
         if (portaMalas == true) {
             return "O porta-malas já está aberto.";
         } else {
             portaMalas = true;
             return "O porta-malas foi aberto.";
         }
-        
+
     }
 
 }

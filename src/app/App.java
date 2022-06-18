@@ -12,46 +12,46 @@ public class App {
 
         while (opcao >= 0) {
             u.limparTela();
-			System.out.println("| Sistema de Controle de Veículos 1.0");
+            System.out.println("| Sistema de Controle de Veículos 1.0");
             System.out.println("| Escolha um tipo de veículo...");
-			System.out.println("| 1 - Avião");
-			System.out.println("| 2 - Automóvel");
-			System.out.println("| 3 - Barco");
-			System.out.println("| 4 - Sair");
+            System.out.println("| 1 - Avião");
+            System.out.println("| 2 - Automóvel");
+            System.out.println("| 3 - Barco");
+            System.out.println("| 4 - Sair");
 
-			opcao = scan.nextInt();
+            opcao = scan.nextInt();
 
-			switch (opcao) {
-				case 1:
+            switch (opcao) {
+                case 1:
                     u.limparTela();
                     System.out.println("| Painel de Controle: Avião");
                     System.out.println("| Nome/Modelo: ");
-					scan.nextLine();
-					String nome = scan.nextLine();
+                    scan.nextLine();
+                    String nome = scan.nextLine();
                     u.limparTela();
                     System.out.println("| Fabricante: ");
-					String fabricante = scan.nextLine();
+                    String fabricante = scan.nextLine();
                     u.limparTela();
                     System.out.println("| País de Origem : ");
-					String pais = scan.nextLine();
+                    String pais = scan.nextLine();
                     u.limparTela();
                     System.out.println("| Ano de Fabricação : ");
-					int ano = scan.nextInt();
+                    int ano = scan.nextInt();
                     u.limparTela();
                     System.out.println("| Capacidade (máxima): ");
-					int capacidade = scan.nextInt();
+                    int capacidade = scan.nextInt();
                     u.limparTela();
                     System.out.println("| Quantidade de Turbinas: ");
-					int turbinas = scan.nextInt();
+                    int turbinas = scan.nextInt();
                     u.limparTela();
 
-                    Aviao aviao = new Aviao(nome, ano, capacidade, turbinas,fabricante,pais);
-                    
+                    Aviao aviao = new Aviao(nome, ano, capacidade, turbinas, fabricante, pais);
+
                     while (opcao >= 0) {
                         u.limparTela();
                         System.out.println("| Escolha uma ação...");
                         System.out.println("| 1 - Acelerar");
-                        System.out.println("| 2 - Mostrar detalhes");
+                        System.out.println("| 2 - Mostrar detalhes e Status");
                         System.out.println("| 3 - Decolar");
                         System.out.println("| 4 - Pousar");
                         System.out.println("| 5 - Voltar");
@@ -61,62 +61,64 @@ public class App {
                                 u.limparTela();
                                 System.out.println(aviao.acelerar());
                                 u.aguardaInput();
-                            break;
+                                break;
                             case 2:
                                 u.limparTela();
                                 aviao.mostrarDetalhes();
+                                aviao.atualizarStatus();
+                                aviao.mostrarStatus();
                                 u.aguardaInput();
-                            break;
+                                break;
                             case 3:
                                 u.limparTela();
                                 System.out.println(aviao.decolar());
                                 u.aguardaInput();
-                            break;
+                                break;
                             case 4:
                                 u.limparTela();
                                 System.out.println(aviao.pousar());
                                 u.aguardaInput();
-                            break;
+                                break;
                             case 5:
                                 u.limparTela();
                                 System.out.println("Voltando ao menu anterior...");
                                 opcao = -1;
                                 u.aguardaInput();
-                            break;
+                                break;
                             default:
                                 u.limparTela();
                                 System.out.println("Opção inválida!");
                                 u.aguardaInput();
-                            break;
+                                break;
                         }
                     }
                     opcao = 0;
                     break;
-				case 2:
+                case 2:
                     u.limparTela();
                     System.out.println("| Painel de Controle: Automóvel");
                     System.out.println("| Nome/Modelo: ");
-					scan.nextLine();
-					nome = scan.nextLine();
+                    scan.nextLine();
+                    nome = scan.nextLine();
                     u.limparTela();
                     System.out.println("| Fabricante: ");
-					fabricante = scan.nextLine();
+                    fabricante = scan.nextLine();
                     u.limparTela();
                     System.out.println("| País de Origem : ");
-					pais = scan.nextLine();
+                    pais = scan.nextLine();
                     u.limparTela();
                     System.out.println("| Ano de Fabricação : ");
-					ano = scan.nextInt();
+                    ano = scan.nextInt();
                     u.limparTela();
                     System.out.println("| Capacidade (máxima): ");
-					capacidade = scan.nextInt();
+                    capacidade = scan.nextInt();
                     u.limparTela();
                     System.out.println("| Tamanho das Rodas (polegadas): ");
-					int diametroRoda = scan.nextInt();
+                    int diametroRoda = scan.nextInt();
                     u.limparTela();
 
-                    Automovel automovel = new Automovel(nome, ano, capacidade, diametroRoda,fabricante,pais);
-                    
+                    Automovel automovel = new Automovel(nome, ano, capacidade, diametroRoda, fabricante, pais);
+
                     while (opcao >= 0) {
                         u.limparTela();
                         System.out.println("| Escolha uma ação...");
@@ -130,57 +132,57 @@ public class App {
                                 u.limparTela();
                                 System.out.println(automovel.acelerar());
                                 u.aguardaInput();
-                            break;
+                                break;
                             case 2:
                                 u.limparTela();
                                 automovel.mostrarDetalhes();
                                 u.aguardaInput();
-                            break;
+                                break;
                             case 3:
                                 u.limparTela();
                                 System.out.println(automovel.abrirPortaMalas());
                                 u.aguardaInput();
-                            break;
+                                break;
                             case 4:
                                 u.limparTela();
                                 System.out.println("Voltando ao menu anterior...");
                                 opcao = -1;
                                 u.aguardaInput();
-                            break;
+                                break;
                             default:
                                 u.limparTela();
                                 System.out.println("Opção inválida!");
                                 u.aguardaInput();
-                            break;
+                                break;
                         }
                     }
                     opcao = 0;
                     break;
-				case 3:
+                case 3:
                     u.limparTela();
                     System.out.println("| Painel de Controle: Barco");
                     System.out.println("| Nome/Modelo: ");
-					scan.nextLine();
-					nome = scan.nextLine();
+                    scan.nextLine();
+                    nome = scan.nextLine();
                     u.limparTela();
                     System.out.println("| Fabricante: ");
-					fabricante = scan.nextLine();
+                    fabricante = scan.nextLine();
                     u.limparTela();
                     System.out.println("| País de Origem : ");
-					pais = scan.nextLine();
+                    pais = scan.nextLine();
                     u.limparTela();
                     System.out.println("| Ano de Fabricação : ");
-					ano = scan.nextInt();
+                    ano = scan.nextInt();
                     u.limparTela();
                     System.out.println("| Capacidade (máxima): ");
-					capacidade = scan.nextInt();
+                    capacidade = scan.nextInt();
                     u.limparTela();
                     System.out.println("| Quantidade de Velas: ");
-					int velas = scan.nextInt();
+                    int velas = scan.nextInt();
                     u.limparTela();
 
-                    Barco barco = new Barco(nome, ano, capacidade, velas,fabricante,pais);
-                    
+                    Barco barco = new Barco(nome, ano, capacidade, velas, fabricante, pais);
+
                     while (opcao >= 0) {
                         u.limparTela();
                         System.out.println("| Escolha uma ação...");
@@ -195,49 +197,49 @@ public class App {
                                 u.limparTela();
                                 System.out.println(barco.acelerar());
                                 u.aguardaInput();
-                            break;
+                                break;
                             case 2:
                                 u.limparTela();
                                 barco.mostrarDetalhes();
                                 u.aguardaInput();
-                            break;
+                                break;
                             case 3:
                                 u.limparTela();
                                 System.out.println(barco.icarVelas());
                                 u.aguardaInput();
-                            break;
+                                break;
                             case 4:
                                 u.limparTela();
                                 System.out.println(barco.recolherVelas());
                                 u.aguardaInput();
-                            break;
+                                break;
                             case 5:
                                 u.limparTela();
                                 System.out.println("Voltando ao menu anterior...");
                                 opcao = -1;
                                 u.aguardaInput();
-                            break;
+                                break;
                             default:
                                 u.limparTela();
                                 System.out.println("Opção inválida!");
                                 u.aguardaInput();
-                            break;
+                                break;
                         }
                     }
                     opcao = 0;
-					break;
-				case 4:
+                    break;
+                case 4:
                     u.limparTela();
                     System.out.println("Sistema encerrado!");
                     opcao = -1;
                     u.aguardaInput();
-					break;
-				default:
-					u.limparTela();
-					System.out.println("Opção inválida!");
-					u.aguardaInput();
-			}
-		}
+                    break;
+                default:
+                    u.limparTela();
+                    System.out.println("Opção inválida!");
+                    u.aguardaInput();
+            }
+        }
 
         scan.close();
 

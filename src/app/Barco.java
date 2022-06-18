@@ -1,19 +1,15 @@
 package app;
 
 public class Barco extends Veiculo {
-    
+
     private int numVelas;
     private boolean statusVelas;
     private boolean acelerado;
 
     Fabricante fabricante = new Fabricante();
 
-    public Barco(String nome, int anoFabricacao, int capacidade, int numVelas, Fabricante fabricante) {
-        super(nome, anoFabricacao, capacidade, fabricante);
-        this.numVelas = numVelas;
-    }
-
-    public Barco(String nome, int anoFabricacao, int capacidade, int numVelas, String nomeFabricante, String paisDeOrigemFabricante) {
+    public Barco(String nome, int anoFabricacao, int capacidade, int numVelas, String nomeFabricante,
+            String paisDeOrigemFabricante) {
         super(nome, anoFabricacao, capacidade);
         this.numVelas = numVelas;
         fabricante.setNome(nomeFabricante);
@@ -28,35 +24,40 @@ public class Barco extends Veiculo {
         this.numVelas = numVelas;
     }
 
-    public String icarVelas(){
-        if (statusVelas == true){
+    public String icarVelas() {
+        if (statusVelas == true) {
             return "O barco já está com as velas içadas.";
         } else {
+            statusVelas = true;
             return "O barco içou as velas.";
         }
     }
 
-    public String recolherVelas(){
-        if (statusVelas != true){
+    public String recolherVelas() {
+        if (statusVelas != true) {
             return "O barco já está com as velas recolhidas.";
         } else {
+            statusVelas = false;
             return "O barco recolheu as velas.";
         }
     }
 
     @Override
-    public String acelerar(){
-        if (acelerado == true){
+    public String acelerar() {
+        if (acelerado == true) {
             return "O barco já está em aceleração máxima.";
         } else {
+            acelerado = true;
             return "O barco acelerou.";
         }
     }
 
     @Override
-    public void mostrarDetalhes(){
+    public void mostrarDetalhes() {
         System.out.println("| Ficha Técnica da Embarcação:");
-        System.out.println("| O barco " + super.getNome() + ", com casco fabricado em " + super.getAnoFabricacao() + " pelo Estaleiro " + fabricante.getNome() + " (" + fabricante.getPaisDeOrigem() + ") utiliza " + numVelas + " velas e possui capacidade para até " + super.capacidade + " tripulantes.");
+        System.out.println("| O barco " + super.getNome() + ", com casco fabricado em " + super.getAnoFabricacao()
+                + " pelo Estaleiro " + fabricante.getNome() + " (" + fabricante.getPaisDeOrigem() + ") utiliza "
+                + numVelas + " velas e possui capacidade para até " + super.capacidade + " tripulantes.");
     }
 
 }

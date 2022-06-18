@@ -5,17 +5,8 @@ public class Fabricante {
     private String nome;
     private String paisDeOrigem;
   
-    public Fabricante(String nome, String paisDeOrigem) {
-        this.nome = "Boeing";
-        this.paisDeOrigem = "Eua";
+    public Fabricante() {
     }
-
-
-
-    /* public Fabricante(String nome, String fabricante) {
-        nome = this.getNome();
-        paisDeOrigem = this.getPaisDeOrigem();
-    } */
 
     public String getNome() {
         return nome;

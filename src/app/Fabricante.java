@@ -6,9 +6,11 @@ public class Fabricante {
     private String paisDeOrigem;
   
     public Fabricante(String nome, String paisDeOrigem) {
-        this.nome = nome;
-        this.paisDeOrigem = paisDeOrigem;
+        this.nome = "Boeing";
+        this.paisDeOrigem = "Eua";
     }
+
+
 
     /* public Fabricante(String nome, String fabricante) {
         nome = this.getNome();

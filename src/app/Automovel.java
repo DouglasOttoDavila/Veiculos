@@ -2,8 +2,8 @@ package app;
 
 public class Automovel extends Veiculo {
     
-    public Automovel(String nomeFabricante, String paisDeOrigemFabricante, String nome, int anoFabricacao, int capacidade, int diametroRoda) {
-        super(nomeFabricante, paisDeOrigemFabricante, nome, anoFabricacao, capacidade);
+    public Automovel(String nome, int anoFabricacao, int capacidade, int diametroRoda, Fabricante fabricante) {
+        super(nome, anoFabricacao, capacidade, fabricante);
         this.diametroRoda = diametroRoda;
     }
 

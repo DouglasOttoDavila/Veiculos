@@ -4,8 +4,8 @@ public class Aviao extends Veiculo {
     
     private int numTurbinas;
 
-    public Aviao(String nomeFabricante, String paisDeOrigemFabricante, String nome, int anoFabricacao, int capacidade, int numTurbinas) {
-        super(nomeFabricante, paisDeOrigemFabricante, nome, anoFabricacao, capacidade);
+    public Aviao(String nome, int anoFabricacao, int capacidade, int numTurbinas, Fabricante fabricante) {
+        super(nome, anoFabricacao, capacidade, fabricante);
         this.numTurbinas = numTurbinas;
     }
 
@@ -24,7 +24,7 @@ public class Aviao extends Veiculo {
 
     @Override
     public void mostrarDetalhes(){
-        System.out.println("O avião " + super.getNome() + ", ano " + super.getAnoFabricacao() + ", produzido pela " + super.fabricante.getNome() + " (" + super.getPaisDeOrigem() + ") utiliza " + numTurbinas + " turbinas e possui capacidade para " + super.capacidade + " pessoas.");
+        System.out.println("O avião " + super.getNome() + ", ano " + super.getAnoFabricacao() + ", produzido pela " + super.fabricante.getNome() + " (" + super.fabricante.getPaisDeOrigem() + ") utiliza " + numTurbinas + " turbinas e possui capacidade para " + super.capacidade + " pessoas.");
     }
 
     public String decolar(){

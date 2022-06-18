@@ -5,25 +5,23 @@ public abstract class Veiculo {
     protected String nome;
     protected int anoFabricacao;
     protected int capacidade;
-    protected String nomeFabricante;
-    protected String paisDeOrigemFabricante;
+    protected Fabricante fabricante;
 
-    Fabricante fabricante = new Fabricante(nomeFabricante, paisDeOrigemFabricante);
-
-    public Fabricante getFabricante() {
-        return fabricante;
+    public Veiculo(){
+        this.fabricante = new Fabricante(nome, nome);
     }
 
-    public void setFabricante(Fabricante fabricante) {
-        this.fabricante = fabricante;
-    }
-
-    public Veiculo(String nomeFabricante, String paisDeOrigemFabricante, String nome, int anoFabricacao, int capacidade) {    
+    public Veiculo (String nome, int anoFabricacao, int capacidade){
         this.nome = nome;
         this.anoFabricacao = anoFabricacao;
         this.capacidade = capacidade;
-        this.nomeFabricante = nomeFabricante;
-        this.paisDeOrigemFabricante = paisDeOrigemFabricante;
+        this.fabricante = new Fabricante(nome, nome);
+    }
+
+    public Veiculo(String nome, int anoFabricacao, int capacidade, Fabricante fabricante) {    
+        this.nome = nome;
+        this.anoFabricacao = anoFabricacao;
+        this.capacidade = capacidade;
     }
 
     public String getNome() {
@@ -33,7 +31,6 @@ public abstract class Veiculo {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
 
     public int getAnoFabricacao() {
         return anoFabricacao;
@@ -51,14 +48,18 @@ public abstract class Veiculo {
         this.capacidade = capacidade;
     }
 
+    public Fabricante getFabricante() {
+        return fabricante;
+    }
+
+    public void setFabricante(Fabricante fabricante) {
+        this.fabricante = fabricante;
+    }
+
     public abstract String acelerar();
 
     public void mostrarDetalhes(){
         
-    }
-
-    public String getPaisDeOrigem() {
-        return null;
     }
     
     

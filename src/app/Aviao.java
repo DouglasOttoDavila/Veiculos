@@ -3,6 +3,8 @@ package app;
 public class Aviao extends Veiculo {
     
     private int numTurbinas;
+    private boolean voo;
+    private boolean acelerado;
 
     Fabricante fabricante = new Fabricante();
 
@@ -27,20 +29,36 @@ public class Aviao extends Veiculo {
 
     @Override
     public String acelerar(){
-        return "O avião acelerou.";
+        if (acelerado == true) {
+            return "O avião já encontra-se com aceleração máxima.";
+        } else {
+            acelerado = true;
+            return "O avião acelerou.";
+        }
     }
 
     @Override
     public void mostrarDetalhes(){
-        System.out.println("O avião " + super.getNome() + ", ano " + super.getAnoFabricacao() + ", produzido pela " + fabricante.getNome() + " (" + fabricante.getPaisDeOrigem() + ") utiliza " + numTurbinas + " turbinas e possui capacidade para " + super.capacidade + " pessoas.");
+        System.out.println("| Ficha Técnica da Aeronave:");
+        System.out.println("| O avião " + super.getNome() + ", ano " + super.getAnoFabricacao() + ", produzido pela " + fabricante.getNome() + " (" + fabricante.getPaisDeOrigem() + ") utiliza " + numTurbinas + " turbinas e possui capacidade para " + super.capacidade + " pessoas.");
     }
 
     public String decolar(){
-        return "O avião decolou.";
+        if (voo == true) {
+            return "O avião já encontra-se em vôo.";
+        } else {
+            voo = true;
+            return "O avião decolou.";
+        }
     }
 
-    public String pousar(){
-        return "O avião pousou.";
+    public String pousar(){ 
+        if (voo != true) {
+            return "O avião já encontra-se no solo.";
+        } else {
+            voo = false;
+            return "O avião pousou.";
+        }
     }
     
 }

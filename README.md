@@ -1,5 +1,7 @@
 ## Questão (8,0) - Neste desafio, você deve programar uma solução orientada a objetos utilizando Java. Desenvolva um código claro e eficiente. Sua tarefa como desenvolvedor, consiste em implementar a estrutura de classes apresentada neste diagrama:
 
+https://i.ibb.co/2jqRCfL/Screenshot-62.jpg
+
 ## Implemente as classes e relacionamentos especificados no diagrama considerando atendendo aos seguintes pontos:
 
 1) Atente as relações que acontecem com a classe veículo para que o sistema funcione corretamente.
